@@ -1,0 +1,53 @@
+.body{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    background-color: #9d9df6;
+
+    .login{
+        width: 100%;
+        max-width: 330px;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 25px;
+        margin: 50px;
+
+        img{
+            width: 100%;
+            border-radius: 25px 25px 0px 0px;
+        }
+        h1{
+            color: rgb(1, 1, 72);
+            font-size: 25px;
+            font-weight: 400;
+        }
+        .button{
+            width: 75%;
+            border-radius: 5px;
+            padding: 2px;
+            border-left: solid 2px #9d9df6;
+            border-bottom: solid 2px #9d9df6;
+            border-right: solid 0.5px #9d9df6;
+            border-top: solid 0.5px #9d9df6;
+            margin-bottom: 25px
+            ;
+            
+        }
+        .componentLogin{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            height: 200px;
+        }
+    }
+}
+
+.spinner{
+    margin: 0 auto;
+    
+}
+
+

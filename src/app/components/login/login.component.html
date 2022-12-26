@@ -1,0 +1,25 @@
+<div class="body">
+
+    <div class="login">
+        <mat-spinner *ngIf="loading" class="spinner" diameter="50"></mat-spinner> 
+        <form *ngIf="!loading" [formGroup]="form" (ngSubmit)="ingresar()">
+            <img src="../../../assets/backgroundLogin.png" alt=""> 
+            <h1>Ingresar a panel administrador</h1>
+            <div class="componentLogin">
+                <mat-form-field appearance="fill">
+                    <mat-label>Usuario</mat-label>
+                    <input matInput autocomplete="off" formControlName="usuario">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput autocomplete="off" formControlName="password">
+                </mat-form-field>
+                <button mat-button color="primary" class="button">Ingresar</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+
+<!-- autocomplete="off" => para que no aparezca el historial en el inputs -->
