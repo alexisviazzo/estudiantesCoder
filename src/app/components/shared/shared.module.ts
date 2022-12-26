@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 //Modulos Angular Material
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -11,6 +12,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
 
 
 
@@ -27,6 +29,8 @@ import { MatIconModule } from '@angular/material/icon';
         MatProgressSpinnerModule,
         MatToolbarModule,
         MatIconModule,
+        HttpClientModule,
+        MatTableModule,
 
         //Reactive Form
         ReactiveFormsModule,
@@ -41,6 +45,7 @@ import { MatIconModule } from '@angular/material/icon';
             MatProgressSpinnerModule,
             MatToolbarModule,
             MatIconModule,
+            MatTableModule,
     
             //Reactive Form
             ReactiveFormsModule,

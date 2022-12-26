@@ -24,10 +24,6 @@ import { NavComponent } from './components/dashboard/nav/nav.component';
      DashboardComponent,
      ErrorComponent,
      NavComponent,
-    //  NavbarComponent,
-    //  InicioComponent,
-    //  ReportesComponent,
-    //  UsuarioComponent
 
 
   ],
