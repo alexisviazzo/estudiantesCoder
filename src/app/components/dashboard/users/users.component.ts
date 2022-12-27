@@ -5,6 +5,9 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { Usuario } from '../../../interfaces/usuario';
+import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.component';
+import { MatDialog } from '@angular/material/dialog';
+import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
 
 
 
@@ -26,11 +29,15 @@ export class UsersComponent implements OnInit {
   paginator!: MatPaginator;
   @ViewChild(MatSort)
   sort: MatSort = new MatSort;
+  dialogService: any;
   
 
 
 
-  constructor(private _usuarioService: UsuarioService, private _snackBar: MatSnackBar) { }
+  constructor(
+    private readonly dialogServices: MatDialog, 
+    private _usuarioService: UsuarioService, 
+    private _snackBar: MatSnackBar){ }
 
   ngOnInit(): void {
     this.cargarUsuarios()
@@ -52,7 +59,6 @@ export class UsersComponent implements OnInit {
   }
 
   eliminarUsuario(index: number){
-    console.log(index);
 
     this._usuarioService.eliminarUsuario(index);
     this.cargarUsuarios()
@@ -62,5 +68,9 @@ export class UsersComponent implements OnInit {
       verticalPosition: 'bottom'
     })
 
+  }
+
+  addStudent(){
+    this.dialogServices.open(EditarUsuarioComponent)
   }
 }

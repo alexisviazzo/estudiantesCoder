@@ -9,6 +9,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { UsersComponent } from './users/users.component';
 import { CrearUsuarioComponent } from './users/crear-usuario/crear-usuario.component';
+import { EditarUsuarioComponent } from './users/editar-usuario/editar-usuario.component';
+
+
 
 
 
@@ -19,6 +22,11 @@ import { CrearUsuarioComponent } from './users/crear-usuario/crear-usuario.compo
     ActionsComponent,
     UsersComponent,
     CrearUsuarioComponent,
+    EditarUsuarioComponent,
+  
+
+
+  
 
   ],
   imports: [

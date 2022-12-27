@@ -18,6 +18,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -41,6 +42,7 @@ import { MatSelectModule } from '@angular/material/select';
         MatSortModule,
         MatCardModule,
         MatSelectModule,
+        MatDialogModule,
 
         //Reactive Form
         ReactiveFormsModule,
@@ -61,6 +63,7 @@ import { MatSelectModule } from '@angular/material/select';
             MatSortModule,
             MatCardModule,
             MatSelectModule,
+            MatDialogModule,
     
             //Reactive Form
             ReactiveFormsModule,

@@ -14,7 +14,11 @@ export class NavComponent implements OnInit {
 
   ngOnInit(): void {
     this.cargarMenu()
+
+   
   }
+
+  pipe = ' - '
 
   cargarMenu() {
     this._menuService.getMenu().subscribe(data => {

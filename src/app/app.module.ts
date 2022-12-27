@@ -9,6 +9,7 @@ import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ErrorComponent } from './components/error/error.component';
 import { NavComponent } from './components/dashboard/nav/nav.component';
+import { AgregandoNombrePipe } from './components/dashboard/nav/agregando-nombre.pipe';
 
 
 
@@ -24,6 +25,7 @@ import { NavComponent } from './components/dashboard/nav/nav.component';
      DashboardComponent,
      ErrorComponent,
      NavComponent,
+     AgregandoNombrePipe,
 
 
   ],

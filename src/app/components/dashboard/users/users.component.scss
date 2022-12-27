@@ -16,3 +16,12 @@ table {
   font-size: 14px;
   width: 100%;
 }
+
+.modal{
+  color:black;
+  .btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}

@@ -1,22 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { Usuario } from 'src/app/interfaces/usuario';
 import { UsuarioService } from 'src/app/services/usuario.service';
-import { Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-crear-usuario',
-  templateUrl: './crear-usuario.component.html',
-  styleUrls: ['./crear-usuario.component.scss']
+  selector: 'app-editar-usuario',
+  templateUrl: './editar-usuario.component.html',
+  styleUrls: ['./editar-usuario.component.scss']
 })
-export class CrearUsuarioComponent implements OnInit {
+export class EditarUsuarioComponent implements OnInit {
   sexo: any[] = [
     'Masculino', 'Femenino'
   ];
-form: FormGroup;
+  
 
+  // form = ''
 
+  // firstNameControl = new FormControl('')
+  // lastNameControl = new FormControl('')
+  // studentForm = new FormGroup({
+  //   firstName: this.firstNameControl,
+  //   lasName: this.firstNameControl,
+  // })
+
+  form: FormGroup;
 
   constructor(private fb: FormBuilder, private _usauriosService: UsuarioService, private router: Router, private _snackBar: MatSnackBar) { 
     this.form = this.fb.group({
@@ -26,10 +35,9 @@ form: FormGroup;
       sexo: ['', Validators.required]
     })
   }
-
   ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
-
 
   agregarUsuario(){
 
@@ -40,14 +48,16 @@ form: FormGroup;
       sexo: this.form.value.sexo,
     }
 
-    this._usauriosService.agregarUsuario(user);
-    this.router.navigate(['/dashboard/'])
+    
 
-    this._snackBar.open('El usuario fue agregado con exito', '', {
+    this._snackBar.open('El usuario fue actualizado con exito', '', {
       duration: 2000,
       horizontalPosition: 'center',
       verticalPosition: 'bottom'
     })
+
+    this._usauriosService.agregarUsuario(user);
+    this.router.navigate(['/dashboard'])
   }
 
   
