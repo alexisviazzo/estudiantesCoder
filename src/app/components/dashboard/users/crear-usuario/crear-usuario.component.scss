@@ -5,6 +5,7 @@
 .botones{
     display: flex;
     flex-direction: row;
+    justify-content: center;
     button{
         margin: 10px;
     }

@@ -5,34 +5,39 @@
 
     <mat-card class="card">
 
-        <form>
-
-            <mat-form-field>
-                <mat-label>Usuario</mat-label>
-                <input matInput autocomplete="off">
-            </mat-form-field>
-            <br>
-            <mat-form-field>
-                <mat-label>Nombre</mat-label>
-                <input matInput autocomplete="off">
-            </mat-form-field>
-            <br>
-            <mat-form-field>
-                <mat-label>Apellido</mat-label>
-                <input matInput autocomplete="off">
-            </mat-form-field>
-            <br>
-            <mat-form-field appearance="fill">
-                <mat-label>Sexo</mat-label>
-                <mat-select>
-                    <mat-option *ngFor="let item of sexo" [value]="item">
-                        {{item}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-            <div class="botones">
-                <button mat-raised-button color="primary">Aceptar</button>
-                <button mat-raised-button color="accent">Volver</button>
+        <form [formGroup]="form" (ngSubmit)="agregarUsuario()" class="container">
+            <div class="row">
+                <mat-form-field class="col-md-12">
+                    <mat-label>Usuario</mat-label>
+                    <input matInput autocomplete="off" formControlName="usuario">
+                </mat-form-field>
+  
+                </div>
+                <div class="row">
+                    <mat-form-field class="col-md-6">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput autocomplete="off" formControlName="nombre">
+                    </mat-form-field>
+                    <mat-form-field class="col-md-6">
+                        <mat-label>Apellido</mat-label>
+                        <input matInput autocomplete="off" formControlName="apellido">
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field appearance="fill" class="col-md-6">
+                        <mat-label>Sexo</mat-label>
+                        <mat-select formControlName="sexo">
+                            <mat-option *ngFor="let item of sexo" [value]="item">
+                                {{item}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            <div class="row" >
+                <div class="botones">
+                    <button type="submit" [disabled]="form.invalid"  mat-raised-button color="primary" class="col-md-3">Aceptar</button>
+                    <button mat-raised-button color="basic" class="col-md-3">Volver</button>
+                </div>
             </div>
         </form>
 
