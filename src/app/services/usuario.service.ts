@@ -30,4 +30,8 @@ export class UsuarioService {
   eliminarUsuario(index: number){
     this.alumnos.splice(index, 1)
   }
+
+  agregarUsuario(usuario: Usuario){
+    this.alumnos.unshift(usuario);
+  }
 }

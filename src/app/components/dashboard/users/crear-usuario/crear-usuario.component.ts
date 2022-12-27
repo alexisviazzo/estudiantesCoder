@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Usuario } from 'src/app/interfaces/usuario';
+import { UsuarioService } from 'src/app/services/usuario.service';
+import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-crear-usuario',
@@ -14,7 +18,7 @@ form: FormGroup;
 
 
 
-  constructor(private fb: FormBuilder) { 
+  constructor(private fb: FormBuilder, private _usauriosService: UsuarioService, private router: Router, private _snackBar: MatSnackBar) { 
     this.form = this.fb.group({
       usuario: ['', Validators.required],
       nombre: ['', Validators.required],
@@ -28,6 +32,21 @@ form: FormGroup;
 
 
   agregarUsuario(){
-    console.log(this.form.value)
+
+    const user: Usuario = {
+      usuario: this.form.value.usuario,
+      nombre: this.form.value.nombre,
+      apellido: this.form.value.apellido,
+      sexo: this.form.value.sexo,
+    }
+
+    this._usauriosService.agregarUsuario(user);
+    this.router.navigate(['/dashboard/'])
+
+    this._snackBar.open('El usuario fue agregado con exito', '', {
+      duration: 2000,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom'
+    })
   }
 }
