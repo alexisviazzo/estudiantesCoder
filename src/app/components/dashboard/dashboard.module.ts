@@ -8,6 +8,9 @@ import { SharedModule } from '../shared/shared.module';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { UsersComponent } from './users/users.component';
+import { CrearUsuarioComponent } from './users/crear-usuario/crear-usuario.component';
+
+
 
 
 
@@ -15,6 +18,8 @@ import { UsersComponent } from './users/users.component';
   declarations: [
     ActionsComponent,
     UsersComponent,
+    CrearUsuarioComponent,
+
   ],
   imports: [
     CommonModule,

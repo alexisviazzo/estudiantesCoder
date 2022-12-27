@@ -1,0 +1,43 @@
+<div class="container">
+    <mat-toolbar color="accent">
+        <span>Crear registro de alumno</span>
+    </mat-toolbar>
+
+    <mat-card class="card">
+
+        <form>
+
+            <mat-form-field>
+                <mat-label>Usuario</mat-label>
+                <input matInput autocomplete="off">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Nombre</mat-label>
+                <input matInput autocomplete="off">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Apellido</mat-label>
+                <input matInput autocomplete="off">
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="fill">
+                <mat-label>Sexo</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let item of sexo" [value]="item">
+                        {{item}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <div class="botones">
+                <button mat-raised-button color="primary">Aceptar</button>
+                <button mat-raised-button color="accent">Volver</button>
+            </div>
+        </form>
+
+
+
+
+    </mat-card>
+</div>
