@@ -9,11 +9,8 @@ import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ErrorComponent } from './components/error/error.component';
 import { NavComponent } from './components/dashboard/nav/nav.component';
+
 import { AgregandoNombrePipe } from './components/dashboard/nav/agregando-nombre.pipe';
-
-
-
-
 
 
 @NgModule({
@@ -26,6 +23,7 @@ import { AgregandoNombrePipe } from './components/dashboard/nav/agregando-nombre
      ErrorComponent,
      NavComponent,
      AgregandoNombrePipe,
+   
 
 
   ],
@@ -34,7 +32,6 @@ import { AgregandoNombrePipe } from './components/dashboard/nav/agregando-nombre
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-
   
   ],
   providers: [],

@@ -1,14 +1,31 @@
 <mat-toolbar color="primary">
     <mat-toolbar-row>
-        <span>App Estudiantes {{ pipe | agregandoNombre }}  </span>
-
-
+        <span>App Estudiantes {{ pipe | agregandoNombre }} </span>
         <span class="spacer"></span>
-            <button mat-button *ngFor="let item of menu" [routerLink]="item.redirect" color="secundary">{{ item.nombre  }}</button>
-        <span class="spacer"></span>
-
-        <button mat-icon-button class="example-icon" >
+        <button mat-icon-button class="example-icon">
             <mat-icon routerLink="/login">logout</mat-icon>
         </button>
     </mat-toolbar-row>
 </mat-toolbar>
+
+<button class="btn btn-primary navegacion" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
+    aria-controls="offcanvasScrolling"><mat-icon>menu</mat-icon></button>
+
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+    id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Navegando...</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <div class="offcanvas-body">    
+        <mat-toolbar color="primary">
+            <mat-toolbar-row>
+                <span class="spacer"></span>
+                <button mat-button *ngFor="let item of menu" [routerLink]="item.redirect" class="button-menu" color="secundary">{{ item.nombre }}</button>
+                <span class="spacer"></span>
+            </mat-toolbar-row>
+        </mat-toolbar>
+    </div>
+</div>
+

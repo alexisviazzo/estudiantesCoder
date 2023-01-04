@@ -10,11 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { UsersComponent } from './users/users.component';
 import { CrearUsuarioComponent } from './users/crear-usuario/crear-usuario.component';
 import { EditarUsuarioComponent } from './users/editar-usuario/editar-usuario.component';
-
-
-
-
-
+import { BarraComponent } from './nav/barra/barra.component';
 
 
 @NgModule({
@@ -23,16 +19,14 @@ import { EditarUsuarioComponent } from './users/editar-usuario/editar-usuario.co
     UsersComponent,
     CrearUsuarioComponent,
     EditarUsuarioComponent,
-  
-
-
+    BarraComponent,
   
 
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    SharedModule
+    SharedModule,
   ],
   exports:[
     CommonModule,
