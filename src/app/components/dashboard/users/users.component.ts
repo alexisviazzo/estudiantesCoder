@@ -8,6 +8,11 @@ import { Usuario } from '../../../interfaces/usuario';
 import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.component';
 import { MatDialog } from '@angular/material/dialog';
 import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
+import { formatDate } from '@angular/common';
+
+// Importacion datos API
+import { UserInterface } from 'src/app/models/user.interface';
+import { DataService } from './http/data.service';
 
 
 
@@ -19,6 +24,8 @@ import { CrearUsuarioComponent } from './crear-usuario/crear-usuario.component';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
+
+  users: UserInterface[] | undefined;
 
   listUsuarios: Usuario[] = []
 
@@ -35,12 +42,14 @@ export class UsersComponent implements OnInit {
 
 
   constructor(
+    private dataSvc: DataService,
     private readonly dialogServices: MatDialog, 
     private _usuarioService: UsuarioService, 
     private _snackBar: MatSnackBar){ }
 
   ngOnInit(): void {
     this.cargarUsuarios()
+    this.dataSvc.getUsers().subscribe((data) => (this.users = data));
   }
 
   cargarUsuarios() {
@@ -70,7 +79,9 @@ export class UsersComponent implements OnInit {
 
   }
 
-  addStudent(){
-    this.dialogServices.open(EditarUsuarioComponent)
-  }
+editarUsuario(){
+  console.log("Editando")
 }
+}
+
+

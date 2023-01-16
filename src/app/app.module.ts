@@ -12,6 +12,8 @@ import { NavComponent } from './components/dashboard/nav/nav.component';
 
 import { AgregandoNombrePipe } from './components/dashboard/nav/agregando-nombre.pipe';
 
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,6 @@ import { AgregandoNombrePipe } from './components/dashboard/nav/agregando-nombre
      ErrorComponent,
      NavComponent,
      AgregandoNombrePipe,
-   
 
 
   ],
@@ -32,6 +33,7 @@ import { AgregandoNombrePipe } from './components/dashboard/nav/agregando-nombre
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
+    HttpClientModule
   
   ],
   providers: [],

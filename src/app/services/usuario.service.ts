@@ -5,6 +5,7 @@ import { Usuario } from '../interfaces/usuario';
   providedIn: 'root'
 })
 export class UsuarioService {
+  [x: string]: any;
 
   alumnos: Usuario[] = [
     {usuario: '1', nombre: 'Alexis', apellido: 'Viazzo', sexo: 'masculino'},

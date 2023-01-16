@@ -11,6 +11,7 @@ import { UsersComponent } from './users/users.component';
 import { CrearUsuarioComponent } from './users/crear-usuario/crear-usuario.component';
 import { EditarUsuarioComponent } from './users/editar-usuario/editar-usuario.component';
 import { BarraComponent } from './nav/barra/barra.component';
+import { HttpComponent } from './users/http/http.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { BarraComponent } from './nav/barra/barra.component';
     CrearUsuarioComponent,
     EditarUsuarioComponent,
     BarraComponent,
+    HttpComponent,
   
 
   ],

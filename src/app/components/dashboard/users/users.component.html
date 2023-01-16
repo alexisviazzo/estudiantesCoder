@@ -13,30 +13,30 @@
           <input matInput (keyup)="applyFilter($event)" placeholder="Empieza a escribir" #input autocomplete="off">
       </mat-form-field>
   
-      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort >
       
           <!-- Position Column -->
           <ng-container matColumnDef="usuario">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Usuario </th>
-            <td mat-cell *matCellDef="let element"> {{element.usuario}} </td>
+            <td mat-cell *matCellDef="let user of users"> {{user.usuario}} </td>
           </ng-container>
       
           <!-- Name Column -->
-          <ng-container matColumnDef="nombre">
+          <ng-container  matColumnDef="nombre">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
-            <td mat-cell *matCellDef="let element"> {{element.nombre | uppercase}} </td>
+            <td mat-cell *matCellDef="let user of users" > {{user.nombre | uppercase}} </td>
           </ng-container>
         
           <!-- Weight Column -->
           <ng-container matColumnDef="apellido">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Apellido </th>
-            <td mat-cell *matCellDef="let element"> {{element.apellido | uppercase}} </td>
+            <td mat-cell *matCellDef="let user of users"> {{user.apellido | uppercase}} </td>
           </ng-container>
         
           <!-- Symbol Column -->
           <ng-container matColumnDef="sexo">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Sexo </th>
-            <td mat-cell *matCellDef="let element"> {{element.sexo}} </td>
+            <td mat-cell *matCellDef="let user of users"> {{user.sexo}} </td>
           </ng-container>
   
           <ng-container matColumnDef="acciones">
@@ -45,7 +45,7 @@
               <span class="pointer" href="" style="color:blue" matTooltip="Ver Usuario">
                   <mat-icon>search</mat-icon>
               </span>
-              <span (click)="addStudent()" class="pointer" href="" style="color:yellow" matTooltip="Editar Usuario">
+              <span (click)="editarUsuario()" class="pointer" href="" style="color:yellow" matTooltip="Editar Usuario">
                   <mat-icon data-bs-toggle="modal" data-bs-target="#exampleModal">edit</mat-icon>
               </span>
               <span (click)="eliminarUsuario(i)" class="pointer" href="" style="color:red" matTooltip="Eliminar Usuario">
@@ -67,6 +67,31 @@
     <h2 *ngIf="listUsuarios.length == 0">No hay alumnos para mostrar</h2>
 </div>
 
+<app-http></app-http>
 
 
-  
+
+<ul>
+  <li *ngFor="let user of users">
+    {{ user.nombre }}
+  </li>
+</ul> 
+
+<table class="table table-striped-columns">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Sexo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td *ngFor="let user of users">{{ user.nombre }}</td>
+      <td *ngFor="let user of users">{{ user.apellido }}</td>
+      <td *ngFor="let user of users">{{ user.sexo }}</td>
+    </tr>
+  </tbody>
+</table>

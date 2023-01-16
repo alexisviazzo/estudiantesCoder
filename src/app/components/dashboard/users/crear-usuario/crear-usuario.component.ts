@@ -32,6 +32,7 @@ form: FormGroup;
 
 
   agregarUsuario(){
+    if ( this.form.value.usuario && this.form.value.nombre && this.form.value.apellido && this.form.value.sexo){
 
     const user: Usuario = {
       usuario: this.form.value.usuario,
@@ -43,13 +44,21 @@ form: FormGroup;
     this._usauriosService.agregarUsuario(user);
     this.router.navigate(['/dashboard/'])
 
-    this._snackBar.open('El usuario fue agregado con exito', '', {
-      duration: 2000,
-      horizontalPosition: 'center',
-      verticalPosition: 'bottom'
-    })
-  }
-
-  
-
+  this._snackBar.open('El usuario fue agregado con exito', '', {
+    duration: 2000,
+    horizontalPosition: 'center',
+    verticalPosition: 'bottom'
+  })
 }
+else{
+  this.router.navigate(['/dashboard/'])
+
+  this._snackBar.open('Ha salido al Dashboard con exito', '', {
+    duration: 2000,
+    horizontalPosition: 'center',
+    verticalPosition: 'bottom'
+  })
+}
+}
+  
+  }  

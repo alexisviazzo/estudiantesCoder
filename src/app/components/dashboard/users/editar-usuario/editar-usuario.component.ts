@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Usuario } from 'src/app/interfaces/usuario';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
+
 @Component({
   selector: 'app-editar-usuario',
   templateUrl: './editar-usuario.component.html',
@@ -38,6 +39,7 @@ export class EditarUsuarioComponent implements OnInit {
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
+
 
   agregarUsuario(){
 
