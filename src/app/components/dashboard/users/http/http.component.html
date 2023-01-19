@@ -1,5 +1,18 @@
-<ul>
-    <li *ngFor="let user of users">
-        {{ user.nombre }}
-    </li>
-</ul>
+<table class="table table-striped-columns">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Sexo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <th scope="row">1</th>
+        <td>{{ user.nombre }}</td>
+        <td>{{ user.apellido }}</td>
+        <td>{{ user.sexo }}</td>
+      </tr>
+    </tbody>
+  </table>

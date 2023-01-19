@@ -7,11 +7,18 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DataService {
-  private urlAPI = 'https://63c56994f3a73b3478559ee2.mockapi.io/api/avi/'
+  private urlAPI = 'https://63c56994f3a73b3478559ee2.mockapi.io/api/avi'
+  dataSvc: any;
+  users: any;
 
   constructor(private http: HttpClient) { }
 
   getUsers(): Observable<UserInterface[]> {
     return this.http.get<UserInterface[]>(this.urlAPI + 'users');
   }
+
+  loadUsers() {
+    this.dataSvc.getUsers().subscribe((data: any) => (this.users = data));
+  }
+
 }
