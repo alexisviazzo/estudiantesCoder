@@ -6,5 +6,10 @@
     {
         "nombre": "Administracion",
         "redirect": "/dashboard/actions"
+    },
+    {
+        "nombre": "Cursos",
+        "redirect": "/dashboard/cursos"
     }
+
 ]

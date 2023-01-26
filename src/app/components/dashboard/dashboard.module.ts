@@ -12,6 +12,7 @@ import { CrearUsuarioComponent } from './users/crear-usuario/crear-usuario.compo
 import { EditarUsuarioComponent } from './users/editar-usuario/editar-usuario.component';
 import { BarraComponent } from './nav/barra/barra.component';
 import { HttpComponent } from './users/http/http.component';
+import { CursosComponent } from './cursos/cursos.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { HttpComponent } from './users/http/http.component';
     EditarUsuarioComponent,
     BarraComponent,
     HttpComponent,
+    CursosComponent,
   
 
   ],
